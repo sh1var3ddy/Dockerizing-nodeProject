@@ -1,5 +1,8 @@
 const express = require('express');
+const dotenv = require('dotenv');
+dotenv.config();
 
+const PORT = process.env.PORT;
 const app = express();
 
 app.get("/home",(req,res)=>{
@@ -8,6 +11,6 @@ app.get("/home",(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log("Connected to the server");
+app.listen(PORT,()=>{
+    console.log(`server running on ${PORT}...`);
 })
